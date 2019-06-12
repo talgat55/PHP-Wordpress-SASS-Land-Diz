@@ -1,0 +1,334 @@
+@font-face
+  font-family: 'Ubuntu'
+  src: local('Ubuntu-Light'), local('Ubuntu-Light'),
+  url('Ubuntu-Light.woff') format('woff'),
+  url('Ubuntu-Light.ttf') format('truetype')
+  font-weight: 300
+  font-display: swap
+  font-style: normal
+
+@font-face
+  font-family: 'Ubuntu'
+  src: local('Ubuntu-Regular'), local('Ubuntu-Regular'),
+  url('Ubuntu-Regular.woff') format('woff'),
+  url('Ubuntu-Regular.ttf') format('truetype')
+  font-weight: 400
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Ubuntu'
+  src: local('Ubuntu-Medium'), local('Ubuntu-Medium'),
+  url('Ubuntu-Medium.woff') format('woff'),
+  url('Ubuntu-Medium.ttf') format('truetype')
+  font-weight: 500
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Ubuntu'
+  src: local('Ubuntu-Bold'), local('Ubuntu-Bold'),
+  url('Ubuntu-Bold.woff') format('woff'),
+  url('Ubuntu-Bold.ttf') format('truetype')
+  font-weight: 700
+  font-style: normal
+  font-display: swap
+
+$main_font: 'Ubuntu'
+$main_color : #9CCC51
+$main_color_alt : #85B33E
+$text_color : #67686A
+$alt_color : #14918D
+
+*
+  font-family: 'Ubuntu'
+
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+//
+// Second section
+//
+
+#samples-section
+  margin-bottom: -205px
+  background-image: url("../images/bg-1.png")
+  background-size: cover!important
+  position: relative
+  top: -108px
+  z-index: 1
+  .custom-padding
+    padding: 200px 0
+
+
+
+
+.form-sample
+  .text
+    text-align: center
+    p:first-child
+      font-weight: 700
+      color:  #67686A
+      margin-bottom: 20px
+      span
+        color: $alt_color
+
+    p:last-child
+      font-weight: 300
+      margin-bottom: 40px
+
+  input[type=text]
+    color: #A8A8A8
+    background: #F8F8F8
+    border-radius: 100px
+    width: 100%
+    padding: 15px
+    margin-bottom: 30px
+    border: none
+    text-align: center
+    +placeholder
+      color: #A8A8A8
+
+  input[type=submit]
+    box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.12)
+    border-radius: 73px
+    background: $main_color
+    border: none
+    margin: 40px auto 0 auto
+    padding: 16px 110px
+    display: table
+    color: #fff
+    transition: all .3s
+    &:hover
+      background: $alt_color
+
+//
+// Price section
+//
+
+#price-section
+  background: url("../images/bg-price.jpg")
+  background-size: cover!important
+  background-position: center!important
+  position: relative
+  top: -98px
+  margin-bottom: -98px
+  .title-section
+    margin-bottom: 55px
+    margin-top: 145px
+    text-transform: uppercase
+    span
+      margin-top: 20px
+      display: inline-block
+
+
+  .price-block
+    width: 270px
+    text-align: center
+    background-color: #fff
+    border-top-left-radius: 22px
+    border-top-right-radius: 22px
+    margin: 0 auto 40px auto
+
+    .title
+      margin-top: 20px
+      margin-bottom: 15px
+      color: $text_color
+      font-weight: 700
+      text-transform: uppercase
+      display: inline-block
+      width: 100%
+      font-size: 18px
+
+      span
+        margin-top: 10px
+        font-weight: 300
+        display: block
+        font-size: 16px
+
+    .content
+      margin-top: 30px
+      margin-bottom: 16px
+
+      .price
+        color: $text_color
+        margin-bottom: 15px
+        span
+          padding: 0 6px 0 10px
+          font-weight: 700
+          font-size: 25px
+          color: $main_color
+      .description
+        font-size: 12px
+        span
+          color: $main_color
+
+
+    .bottom
+      margin: 0 15px
+      a
+        font-size: 13px
+        color: #fff
+        text-decoration: none
+        display: block
+        transition: all .3s
+
+        &.first-link
+          background-color: $main_color
+          padding: 26px 13px
+
+        &.sescond-link
+          padding: 26px 13px
+          background-color: #F8F8F8
+          color: $main_color
+
+        &:hover
+          background-color: $alt_color
+          color: #fff
+
+
+
+//
+// Third section
+//
+#third-section
+  padding: 120px 0
+  .title-section
+    color: $text_color
+
+  .list-text
+    margin: 70px 0 0 0
+    padding: 0 0 0 40px
+    position: relative
+    &:before
+      content: ""
+      display: block
+      background: url("../images/third-rounded.jpg")
+      position: absolute
+      top: 20px
+      left: 0
+      width: 14px
+      height: 207px
+    li
+      margin-bottom: 25px
+      list-style: none
+      justify-content: flex-start
+      align-items: flex-start
+      &:last-child
+        margin-bottom: 0
+      span
+        font-size: 36px
+        color: $main_color
+        font-weight: 700
+
+      p
+        margin-left: 26px
+        margin-bottom: 0
+        margin-top: 13px
+
+  .bg-img
+    height: 511px
+
+
+
+//
+// Four section
+//
+#four-section
+  background: url("../images/bg-four.jpg")
+  background-size: cover!important
+  padding: 175px 0
+
+  .bg-img
+    height: 419px
+
+
+  .list-text
+    margin: 50px 0 0 0
+    padding: 0
+    li
+      justify-content: flex-start
+      list-style: none
+      margin-bottom: 30px
+      &:last-child
+        margin-bottom: 0
+      span
+        padding: 7px
+        border-radius: 50%
+        background-color: $main_color
+      p
+        color: #fff
+        margin-bottom: 0
+        margin-left: 33px
+
+
+
+//
+// Step section
+//
+#step-section
+  padding: 95px 0 100px
+  .title-section
+    margin-bottom: 50px
+    text-align: center
+
+  .step-block
+    .img-block
+      height: 256px
+      img
+        position: relative
+        z-index: 2
+
+      &:before
+        content: ""
+        display: block
+        background: url("../images/step-border.png")
+        position: absolute
+        height: 2px
+        width: 195px
+        top: 50%
+        margin-top: -19px
+        right: -100px
+        z-index: 1
+
+    .text
+      width: 210px
+      margin-top: 41px
+      margin-bottom: 0
+      margin-left: auto
+      margin-right: auto
+
+  .col-sm-4:last-child
+    .img-block:before
+      display: none
+
+
+
+
+.title-section
+  font-size: 25px
+  color: #fff
+  font-weight: 700
+  text-transform: uppercase
+  span
+    font-weight: 300
+  &.tree
+    color: $text_color
+
+
+
+
+
+@media  (max-width: 600px)
+  .page-contacts
+    .col-sm-8
+      padding-right: 0!important
+    .content
+      padding: 44px 20px !important
