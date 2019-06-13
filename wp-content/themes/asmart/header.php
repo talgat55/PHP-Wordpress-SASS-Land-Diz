@@ -24,14 +24,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="wrap  <?= get_locale(); ?>">
+<div class="wrap ">
     <header>
-        <?php
-        $phone = get_field('phone_theme', 'option');
-        $redyPhone = $phone ? pregPhone($phone) : '';
 
-
-        ?>
         <div class="top-header">
             <div class="container">
                 <div class="row">
@@ -56,13 +51,13 @@
                                 <img src="<?php echo get_theme_file_uri('/assets/images/mobile.png') ?>" alt="иконка">
                                 <ul class="list">
                                     <li>
-                                        <a href="tel:+79131482031">
-                                            +7(913) <span>148-20-31</span>
+                                        <a href="tel:89131482031">
+                                            8 913<span>14-82-031</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tel:+73812482030">
-                                            +7(3812) <span>48-20-30</span>
+                                        <a href="tel:83812482031">
+                                            8(3812) <span>48-20-31</span>
                                         </a>
                                     </li>
                                 </ul>

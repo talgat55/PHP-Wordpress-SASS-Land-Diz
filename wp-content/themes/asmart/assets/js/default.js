@@ -17,59 +17,60 @@ jQuery(document).ready(function () {
 
 
 
-    galleryExposure();
-    exposureCarousel();
+    certsCarousel();
     lasyLoad();
     modal();
-    carouselParthers();
-    map();
-    carouselHistorry();
-    galleryHistory();
-    sliderCollectionPage();
-    carouselSinglePage();
-    gallerySinglePage();
     mobileMenu();
-    changeLangByClick();
     phoneMask();
-    carouselRow();
-
+    backToTop();
 
     // end redy function
 });
 
-jQuery( window ).resize(function() {
-    dinamicWidthMap();
-});
 
 
 jQuery( window ).load(function() {
-    scrollToAnimate();
+    map();
 });
 
+// ---------------------------------------------------------
+// Back To Top
+// ---------------------------------------------------------
+function backToTop(){
+    "use strict";
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 100) {
+            jQuery('#back_to_top').addClass('backactive');
+        } else {
+            jQuery('#back_to_top').removeClass('backactive');
+        }
+    });
+    jQuery(document).on('click','#back_to_top',function(e){
+        e.preventDefault();
 
+        jQuery('body,html').animate({scrollTop: 0}, jQuery(window).scrollTop()/3, 'linear');
+    });
+
+}
 //
 //  Modal
 //
 function modal() {
     "use strict";
+    var classShow = 'show';
+    jQuery('.overlay-layer, .custom-modal .close, .success-modal .link-ok').click(function () {
 
-    jQuery('.modal-overlay, .img-close-modal').click(function () {
-
-        jQuery('.custom-modal ,  .custom-modal2, .modal-overlay').removeClass('show-modal');
+        jQuery('.custom-modal ,  .success-modal, .overlay-layer').removeClass(classShow);
 
         return false;
     });
-    jQuery('.link-to-call.slider').click(function () {
-        if (jQuery(this).hasClass('link-registration')) {
-            jQuery('.custom-modal2, .modal-overlay').addClass('show-modal');
 
-        } else {
-            jQuery('.custom-modal, .modal-overlay').addClass('show-modal');
 
-        }
+    jQuery('.link-call, .link-feedback-service').click(function () {
+
+        jQuery('.custom-modal, .overlay-layer').addClass(classShow);
 
         return false;
-
 
     });
 
@@ -90,93 +91,47 @@ function lasyLoad() {
 }
 
 //----------------------------------
-//   Carousel Expouse
+//   Carousel Certs
 //---------------------------------------
 
-function exposureCarousel() {
+function certsCarousel() {
     "use strict";
-    var carouselClass = '.carousel-exposure';
-    if (jQuery(carouselClass).length) {
-        jQuery(carouselClass).slick({
-            infinite: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            draggable: false,
-            arrows: false,
-            dots: false
+    var carouselClass   = jQuery('.list-cert');
+    var arrowClass      = jQuery('#cert-section .arrow-bottom');
 
-            //   autoplay: true,
-        });
-        jQuery('.custom-pagination  .prev').click(function (e) {
-            e.preventDefault();
-            jQuery(this).parent().parent().parent().find('.carousel-exposure').slick('slickPrev');
-        });
-        jQuery('.custom-pagination  .next').click(function (e) {
-            e.preventDefault();
-            jQuery(this).parent().parent().parent().find('.carousel-exposure').slick('slickNext');
-        });
-        jQuery(carouselClass).on("afterChange", function (event, slick, currentSlide) {
-            var currentSlideCount = parseInt(currentSlide + 1);
-
-            if (currentSlideCount != '1' && currentSlideCount != slick.slideCount) {
-
-                jQuery(this).parent().find('.custom-pagination .prev, .custom-pagination .next').removeClass('disable');
-            } else if (slick.slideCount == currentSlideCount) {
-
-                jQuery(this).parent().find('.custom-pagination .next').addClass('disable');
-
-            } else {
-                jQuery(this).parent().find('.custom-pagination .prev').addClass('disable');
-            }
-
-            jQuery(this).parent().find('.custom-pagination .paginaiton span').html(' ').html(currentSlide + 1);
-
-        });
-    }
-
-}
-
-//----------------------------------
-//   Carousel Partners
-//---------------------------------------
-function carouselParthers() {
-    "use strict";
-    var carouselClass = jQuery('.list-partners');
     if (carouselClass.length) {
         carouselClass.slick({
             infinite: true,
             slidesToShow: 4,
             slidesToScroll: 1,
-            nextArrow: jQuery('.partner-arrow .next'),
-            prevArrow: jQuery('.partner-arrow .prev'),
-            dots: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-
-            ]
+            arrows: false,
+            dots: true
 
             //   autoplay: true,
         });
+
+        // add space for arrows
+
+        var widthPagination = carouselClass.find('.slick-dots').width();
+
+        arrowClass.css('width', widthPagination +  140);
+
+
+        // custom arrow actions
+
+        jQuery('#cert-section .arrow-bottom  .prev').click(function (e) {
+            e.preventDefault();
+            jQuery(this).parent().parent().parent().find('.list-cert').slick('slickPrev');
+        });
+
+
+        jQuery('#cert-section .arrow-bottom  .next').click(function (e) {
+            e.preventDefault();
+            jQuery(this).parent().parent().parent().find('.list-cert').slick('slickNext');
+        });
+
+
+
 
     }
 
@@ -190,11 +145,9 @@ function carouselParthers() {
 function dinamicWidthMap(){
     "use strict";
     var $mapHome = jQuery('#map');
-    if(jQuery('body').hasClass('home')){
 
-        $mapHome.css('width', jQuery(window).width()/2);
+        $mapHome.css('width', (jQuery(window).width()   - jQuery('.container').width())  / 2  +  jQuery('#map-section .col-sm-6').width());
 
-    }
 
 }
 function map() {
@@ -205,268 +158,40 @@ function map() {
 
     if ($map.length) {
         dinamicWidthMap();
-
-
-        function init() {
-            // Basic options for a simple Google Map
-            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-            var mapOptions = {
-                // How zoomed in you want the map to start at (always required)
-                zoom: 15,
-                controls: [ ],
-                // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(54.983693, 73.368633), // New York
-
-                // How you would like to style the map.
-                // This is where you would paste any style found on Snazzy Maps.
-                styles: [{
-                    "featureType": "all",
-                    "elementType": "geometry",
-                    "stylers": [{"gamma": "0.82"}]
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                    center: [54.959971, 73.353655],
+                    zoom: 12,
+                    controls: ['zoomControl']
                 }, {
-                    "featureType": "all",
-                    "elementType": "geometry.fill",
-                    "stylers": [{"gamma": "1.21"}]
-                }, {
-                    "featureType": "all",
-                    "elementType": "labels",
-                    "stylers": [{"lightness": "-60"}]
-                }, {
-                    "featureType": "all",
-                    "elementType": "labels.text",
-                    "stylers": [{"gamma": "5.37"}]
-                }, {
-                    "featureType": "all",
-                    "elementType": "labels.text.fill",
-                    "stylers": [{"color": "#557a46"}, {"lightness": "-39"}]
-                }, {
-                    "featureType": "all",
-                    "elementType": "labels.text.stroke",
-                    "stylers": [{"visibility": "on"}, {"color": "#ffffff"}, {"lightness": 16}]
-                }, {
-                    "featureType": "all",
-                    "elementType": "labels.icon",
-                    "stylers": [{"visibility": "off"}]
-                },   {
-                    "featureType": "road.local",
-                    "elementType": "geometry",
-                    "stylers": [{"color": "#ffffff"}, {"lightness": 16}]
-                }, {
-                    "featureType": "transit",
-                    "elementType": "geometry",
-                    "stylers": [{"color": "#f2f2f2"}, {"lightness": 19}]
-                }, {
-                    "featureType": "water",
-                    "elementType": "geometry",
-                    "stylers": [{"color": "#e9e9e9"}, {"lightness": 17}]
-                }, {
-                    "featureType": "water",
-                    "elementType": "geometry.fill",
-                    "stylers": [{"color": "#42738d"}, {"gamma": "5.37"}]
-                }]
-            };
-
-            // Get the HTML DOM element that will contain your map
-            // We are using a div with id="map" seen below in the <body>
-            var mapElement = document.getElementById('map');
-
-            // Create the Google Map using our element and options defined above
-            var map = new google.maps.Map(mapElement, mapOptions);
-
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(54.983693, 73.368633),
-                map: map,
-                title: 'Музей'
-            });
-        }
-
-        google.maps.event.addDomListener(window, 'load', init);
-
-    }
-}
+                    // searchControlProvider: 'yandex#search'
+                });
 
 
-//----------------------------------
-//   Carousel in history page
-//---------------------------------------
-function carouselHistorry() {
-    "use strict";
-    var carouselClass = jQuery('.history-carousel');
-    if (carouselClass.length) {
-        carouselClass.slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            nextArrow: jQuery('.history-arrow .next'),
-            prevArrow: jQuery('.history-arrow .prev'),
-            dots: false,
-            lazyLoad: 'ondemand',
-            vertical: true,
-            verticalSwiping: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        vertical: false,
-                        verticalSwiping: false
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        vertical: false,
-                        verticalSwiping: false
-                    }
-                }
 
-            ]
-            //   autoplay: true,
+
+
+            myMap.geoObjects
+                // .add(myPlacemark)
+                .add(new ymaps.Placemark([54.981417, 73.388532], {
+                    iconCaption: 'Наш офис'
+                }, {
+                    preset: 'islands#greenDotIconWithCaption'
+                }))
+                .add(new ymaps.Placemark([54.922778, 73.239672], {
+                    iconCaption: 'Наша база'
+                }, {
+                    preset: 'islands#greenDotIconWithCaption'
+                }));
+            myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('multiTouch');
         });
-
     }
-
-}
-
-
-//----------------------------------
-//   gallery history page
-//---------------------------------------
-function galleryHistory() {
-    "use strict";
-    var historyClass = jQuery('.history-carousel');
-    if (historyClass.length) {
-        historyClass.lightGallery({
-            selector: '.link-full'
-        });
-
-    }
-
-}
-//----------------------------------
-//   gallery for home page exposure
-//---------------------------------------
-function galleryExposure() {
-    "use strict";
-    var exposureClass = jQuery('.link-zoom-expouse');
-    if (exposureClass.length) {
-
-        exposureClass.click(function (e) {
-            e.preventDefault();
-            let images = jQuery(this).parent().parent().parent().parent().parent().parent().attr('data-images');
-            let redyArray = images.split(',');
-            jQuery(this).lightGallery({
-                dynamic: true,
-                dynamicEl:  redyArray.map(function(name) {
-                    return {  'src' : name };
-                })
-            })
-        });
-
-    }
-
-
-
-
-
-}
-
-
-//----------------------------------
-//   Slider in page collection
-//---------------------------------------
-function sliderCollectionPage() {
-    "use strict";
-    var carouselClass = jQuery('.slider-collection');
-    if (carouselClass.length) {
-        carouselClass.slick({
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            nextArrow: jQuery('.arrow-collection .next'),
-            prevArrow: jQuery('.arrow-collection .prev'),
-            dots: false,
-
-            //   autoplay: true,
-        });
-
-    }
-
-}
-
-//----------------------------------
-//   Carousel in single page
-//---------------------------------------
-function carouselSinglePage() {
-    "use strict";
-    var carouselClass = jQuery('.single-events-carousel');
-    if (carouselClass.length) {
-        carouselClass.slick({
-            infinite: true,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            nextArrow: jQuery('.single-arrow .next'),
-            prevArrow: jQuery('.arrow-collection .prev'),
-            dots: false,
-
-            //   autoplay: true,
-        });
-
-    }
-
 }
 
 
 
-//----------------------------------
-//   gallery single page
-//---------------------------------------
-function gallerySinglePage() {
-    "use strict";
-    var singleClass = jQuery('.single-events-carousel');
-    if (singleClass.length) {
-        singleClass.lightGallery({
-            selector: '.link-full'
-        });
 
-    }
-
-}
-//----------------------------------
-//  Change lang by click
-//------------------------------------
-function changeLangByClick(){
-    "use strict";
-    var linkClass = '.list-switch-lang a';
-
-    jQuery('body').on('click', linkClass,function(){
-        jQuery(linkClass).removeClass('active');
-        jQuery(this).addClass('active');
-        console.log(jQuery(this).attr('data-type'));
-        if(jQuery(this).attr('data-type') == 'en'){
-            var redylink = window.location.protocol + "//" + window.location.host + '/en';
-            //var redylink = window.location.protocol + "//" + window.location.host + '/en' + window.location.pathname;
-
-        }else{
-            var redylink = window.location.protocol + "//" + window.location.host;
-
-        }
-
-        window.location.href = redylink;
-        return false;
-    });
-}
 
 //----------------------------------
 //  Mobile Menu
@@ -494,131 +219,22 @@ function phoneMask(){
 
     }
 }
+//
+// Show modal after success send mail
+//
+document.addEventListener('wpcf7mailsent', function(event) {
+    var classShow = 'show';
 
-//----------------------------------
-//  scroll to element
-//------------------------------------
-function scrollToAnimate(){
-    "use strict";
-    let homeClass = jQuery('.home');
-    // if(homeClass.length == 0){
-    //
-    //
-    //
-    //     jQuery(window).scroll(function() {
-    //         var height = jQuery(window).scrollTop();
-    //         console.log(height);
-    //         if(height == 0) {
-    //             jQuery('html, body').animate({
-    //                 scrollTop: jQuery("#primary").offset().top
-    //             }, 800).stop();
-    //         }
-    //     });
-    //
-    // }
+    jQuery('.custom-modal').removeClass(classShow);
 
-}
-//----------------------------------
-//   Carousel Row
-//---------------------------------------
-function carouselRow() {
-    "use strict";
-    let exhibitionsClass        = jQuery('.exhibitions .list-exposures');
-    let eduClass                = jQuery('.edu-events .list-exposures');
-    let exarrowClass            = jQuery('.exhibitions .row-arrow-next');
-    let edarrowClass            = jQuery('.edu-events .row-arrow-next');
+    jQuery('.success-modal, .overlay-layer').addClass(classShow);
 
-    if (eduClass.length) {
-        setTimeout(function(){
-            if(exhibitionsClass.find('li').length > 3){
-                edarrowClass.fadeIn();
+    setTimeout(function(){
 
-            }
-        }, 200);
-
-        eduClass.slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 500,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-
-            ]
-
-        });
-
-    }
-
-    if (exhibitionsClass.length) {
-
-        if(exhibitionsClass.find('li').length > 2){
-            exarrowClass.fadeIn();
-        }
-
-        exhibitionsClass.slick({
-            infinite: true,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 500,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-
-            ]
-
-            //   autoplay: true,
-        });
-
-    }
+        jQuery('.success-modal, .overlay-layer').removeClass(classShow);
 
 
-    //  arrow
-    jQuery('body').on('click', '.row-arrow-next a' ,function(){
-        jQuery(this).parent().parent().find('.list-exposures').slick('slickNext');
-        return false;
-    });
+    },3000);
 
-}
 
+}, false);
