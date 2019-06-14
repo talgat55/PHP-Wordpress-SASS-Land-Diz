@@ -110,6 +110,11 @@ $alt_color : #14918D
     &:hover
       background: $alt_color
 
+  .ajax-loader
+    margin: 15px 0 0 4px!important
+    position: relative
+    left: 50%
+
 //
 // Price section
 //
@@ -326,7 +331,10 @@ $alt_color : #14918D
     margin: -85px 0
     .ajax-loader
       position: absolute
-      bottom: 14px
+      bottom: -34px
+      left: 50%
+      margin-left: -5px
+
   .form-sample-2
     .text
       color: #fff
@@ -364,7 +372,9 @@ $alt_color : #14918D
       &:hover
         background: $alt_color
 
-
+    span.wpcf7-not-valid-tip
+      width: 50%
+      margin: -20px 0 0 auto
 
 //
 // Whom we can help section
@@ -483,9 +493,9 @@ $alt_color : #14918D
 
 
 #cert-section
-  margin-bottom: 200px
+  margin-bottom: 100px
   .title-section
-    margin-top: 75px
+    margin-top: 46px
     margin-bottom: 52px
   .list-cert
     margin: 0
@@ -593,6 +603,15 @@ $alt_color : #14918D
         font-weight: 700
       p:last-child
         font-weight: 300
+    span.wpcf7-not-valid-tip
+      text-align: center
+      margin-bottom: 10px
+      margin-top: -30px
+    .ajax-loader
+      position: absolute
+      left: 50%
+      margin-left: -5px
+      bottom: -27px
 
     textarea,
     input[type=email],
@@ -840,6 +859,9 @@ footer
   .close
     padding: 14px 20px
     transition: all .3s
+    position: absolute
+    right: 8px
+    top: 0px
 
   .text
     padding-top: 25px
@@ -880,6 +902,7 @@ footer
     border-radius: 29px
     resize: none
     margin-bottom: 35px
+    max-height: 120px
 
   input[type=submit]
     box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.12)
@@ -933,7 +956,7 @@ footer
 #back_to_top
   position: fixed
   bottom: 40px
-  right: 215px
+  right: 10px
   z-index: 999
   opacity: 0
   transition: all .3s
@@ -1125,6 +1148,14 @@ div.wpcf7-mail-sent-ok
       margin-left: auto
       margin-right: auto
 
+  .custom-modal
+    width: 50%
+    top: 0
+    transform: translateX(-50%)
+    height: 100%
+    overflow-y: auto
+
+
 @media  (max-width: 768px)
   footer .footer-bottom .link
     text-align: center
@@ -1156,6 +1187,10 @@ div.wpcf7-mail-sent-ok
       margin-top: 70px
 
 @media  (max-width: 600px)
+  .success-modal,
+  .custom-modal
+    width: 100%
+
   #map-section
     #contact-info
       width: 100%
@@ -1224,4 +1259,12 @@ div.wpcf7-mail-sent-ok
       .second
         padding-left: 6px
 
+  #delivery-section
+    .second-row
+      .text-block
+        width: 100%!important
 
+
+span.wpcf7-not-valid-tip
+  text-align: center
+  margin-top: -20px

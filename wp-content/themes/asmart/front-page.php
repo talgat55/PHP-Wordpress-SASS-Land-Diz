@@ -2,7 +2,7 @@
 
 
 get_header(); ?>
-    <h1 class="hide-title"><?php wp_title(''); ?></h1>
+    <h1 class="hide-title"><?=   bloginfo('name'); ?></h1>
     <section id="slider">
         <div class="container h-100">
             <div class="row align-items-center h-100">
@@ -99,10 +99,10 @@ get_header(); ?>
                         </div>
                         <div class="bottom">
                             <div class="row">
-                                <a href="#" class="first-link col-sm-6 col-xs-12">
+                                <a href="#" class="first-link col-sm-6 col-xs-12" >
                                     Заказать онлайн
                                 </a>
-                                <a href="#" class="sescond-link col-sm-6 col-xs-12">
+                                <a  target="_blank" href="http://dizeltrans.lightxdesign.ru/wp-content/uploads/2019/06/ДТ-К5-Антипинский-НПЗ.pdf" class="sescond-link col-sm-6 col-xs-12">
                                     Паспорт качества
                                 </a>
                             </div>
@@ -135,7 +135,7 @@ get_header(); ?>
                                 <a href="#" class="first-link col-sm-6 col-xs-12">
                                     Заказать онлайн
                                 </a>
-                                <a href="#" class="sescond-link col-sm-6 col-xs-12">
+                                <a  target="_blank"  href="http://dizeltrans.lightxdesign.ru/wp-content/uploads/2019/06/ДТ-К5-Газпром-2.pdf" class="sescond-link col-sm-6 col-xs-12">
                                     Паспорт качества
                                 </a>
                             </div>
@@ -541,7 +541,7 @@ get_header(); ?>
                             </div>
                             <div>
                                 <a href="tel:89131482031">
-                                    8 913<span>14-82-031</span>
+                                    8 913 <span>14-82-031</span>
                                 </a>
                                 <a href="tel:83812482031">
                                     8(3812) <span>48-20-31</span>

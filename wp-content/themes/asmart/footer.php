@@ -17,7 +17,7 @@
                 <ul class="nav-bar-footer">
                     <li class="item">
 <!--                        <a href="--><?//= home_url(); ?><!--#price-section">Цена</a>-->
-                        <a href="#price-section">Цена</a>
+                        <a href="#price-section">Цены</a>
                     </li>
                     <li class="item">
                         <a href="#step-section">Этапы работы </a>
