@@ -6,7 +6,7 @@ get_header(); ?>
     <section id="slider">
         <div class="container h-100">
             <div class="row align-items-center h-100">
-                <div class="col-sm-9 col-xs-12 ">
+                <div class="col-md-9 col-xs-12 ">
                     <div class="content">
                         <p>
                             Только у нас
@@ -55,12 +55,12 @@ get_header(); ?>
     <section id="samples-section">
         <div class="container h-100 custom-padding">
             <div class="row align-items-center h-100">
-                <div class="col-sm-6 col-xs-12 text-center">
+                <div class="col-md-6  d-none  d-md-block text-center">
 
                     <img class="lazy" src="<?php echo get_theme_file_uri('/assets/images/transpaernt.png') ?>"
                          data-src="<?php echo get_theme_file_uri('/assets/images/botls.png') ?>" alt="Изображение">
                 </div>
-                <div class="col-sm-6 col-xs-12">
+                <div class="col-md-6 col-xs-12">
                     <?= do_shortcode('[contact-form-7 id="5" title="Заказа образцов топлива" html_class="form-sample"]'); ?>
                 </div>
             </div>
@@ -79,7 +79,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="row  ">
-                <div class="col-sm-6 col-xs-12 text-center">
+                <div class="col-md-6 col-xs-12 text-center">
                     <div class="price-block">
                         <h4 class="title">
                             Евро-3
@@ -112,7 +112,7 @@ get_header(); ?>
 
                     </div>
                 </div>
-                <div class="col-sm-6 col-xs-12">
+                <div class="col-md-6 col-xs-12">
                     <div class="price-block">
                         <h4 class="title">
                             Евро-5
@@ -151,7 +151,7 @@ get_header(); ?>
     <section id="third-section">
         <div class="container h-100 custom-padding">
             <div class="row align-items-center h-100">
-                <div class="col-sm-7 col-xs-12  ">
+                <div class="col-lg-7 col-xs-12  ">
                     <h2 class="title-section">
                         «Газпром» и «ВПК-ОЙЛ»<br>
                         <span>Мы работаем Напрямую от производителей</span>
@@ -187,7 +187,7 @@ get_header(); ?>
 
 
                 </div>
-                <div class="col-sm-5 col-xs-12">
+                <div class="col-lg-5 d-none  d-lg-block">
                     <div class="bg-img">
                         <img class="lazy" src="<?php echo get_theme_file_uri('/assets/images/transpaernt.png') ?>"
                              data-src="<?php echo get_theme_file_uri('/assets/images/third-img.jpg') ?>"
@@ -201,7 +201,7 @@ get_header(); ?>
     <section id="four-section">
         <div class="container h-100 custom-padding">
             <div class="row align-items-center h-100">
-                <div class="col-sm-5 col-xs-12">
+                <div class="col-lg-5 d-none  d-lg-block">
                     <div class="bg-img">
                         <img class="lazy" src="<?php echo get_theme_file_uri('/assets/images/transpaernt.png') ?>"
                              data-src="<?php echo get_theme_file_uri('/assets/images/four-img.png') ?>"
@@ -209,7 +209,7 @@ get_header(); ?>
                     </div>
 
                 </div>
-                <div class="col-sm-7 col-xs-12  ">
+                <div class="col-lg-7 col-xs-12  ">
                     <h2 class="title-section white">
                         Отгружаем точное количество топлива
                     </h2>
@@ -270,7 +270,7 @@ get_header(); ?>
 
             </div>
             <div class="row position-relative">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-lg-4 col-md-6 col-xs-12">
                     <div class="step-block">
                         <div class="img-block text-center">
                             <img class="lazy" src="<?php echo get_theme_file_uri('/assets/images/transpaernt.png') ?>"
@@ -284,7 +284,7 @@ get_header(); ?>
                     </div>
 
                 </div>
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-lg-4  col-md-6 col-xs-12">
                     <div class="step-block">
                         <div class="img-block text-center">
                             <img class="lazy" src="<?php echo get_theme_file_uri('/assets/images/transpaernt.png') ?>"
@@ -298,7 +298,7 @@ get_header(); ?>
                     </div>
 
                 </div>
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-lg-4 col-md-6  col-xs-12">
                     <div class="step-block">
                         <div class="img-block text-center">
                             <img class="lazy" src="<?php echo get_theme_file_uri('/assets/images/transpaernt.png') ?>"
@@ -394,7 +394,7 @@ get_header(); ?>
     <section id="delivery-section">
         <div class="container  ">
             <div class="row  ">
-                <div class="first-row col-sm-5 col-xs-12">
+                <div class="first-row col-lg-5 col-xs-12">
                     <div class="special-block">
                         Все автомобили в автопарке <span>современные</span>,<br>
                         поэтому заказы доставляются за 24 часа и быстрее
@@ -405,7 +405,7 @@ get_header(); ?>
                          alt="Изображение">
 
                 </div>
-                <div class="second-row col-sm-7 col-xs-12">
+                <div class="second-row col-lg-7 col-xs-12">
                     <div class="text-block text-center">
                         <h2 class="title-section white  ">
                             Доставка
@@ -516,7 +516,7 @@ get_header(); ?>
     <section id="map-section">
         <div class="container ">
             <div class="row position-relative">
-                <div class="col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-xs-12">
                     <h2 class="title-section  tree  text-center">
                         Приезжайте к нам на базу<br>
                         <span>Чтобы договориться о регулярных поставках или   просто в гости</span>
@@ -563,7 +563,7 @@ get_header(); ?>
 
 
                 </div>
-                <div class="col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-xs-12 map-container">
                     <div id="map"></div>
                 </div>
             </div>

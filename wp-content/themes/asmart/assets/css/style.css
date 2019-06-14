@@ -34,6 +34,7 @@
   background-image: url("../images/bg-1.png");
   background-size: cover !important;
   position: relative;
+  background-position: center !important;
   top: -108px;
   z-index: 1; }
   #samples-section .custom-padding {
@@ -252,7 +253,7 @@
     margin-left: auto;
     margin-right: auto;
     color: #67686A; }
-  #step-section .col-sm-4:last-child .img-block:before {
+  #step-section .col-lg-4:last-child .img-block:before {
     display: none; }
 
 #five-section {
@@ -309,11 +310,12 @@
     #five-section .form-sample-2 input[type=submit]:hover {
       background: #14918D; }
 
-#whom-can-help-section {
+#whom-can-help-section .title-section {
+  margin-top: 110px;
+  margin-bottom: 95px; }
+
+#whom-can-help-section .help-block {
   margin-bottom: 120px; }
-  #whom-can-help-section .title-section {
-    margin-top: 110px;
-    margin-bottom: 95px; }
   #whom-can-help-section .help-block .img-block {
     height: 192px; }
   #whom-can-help-section .help-block .text {
@@ -880,8 +882,191 @@ footer {
   .title-section.tree {
     color: #67686A; }
 
+@media (max-width: 1400px) {
+  #third-section .bg-img {
+    height: 385px; }
+    #third-section .bg-img img {
+      width: 100%; } }
+
+@media (max-width: 1200px) {
+  header #logo-img img {
+    height: 60px; }
+  header #logo-text .second,
+  header #logo-text .first {
+    font-size: 13px; }
+  header #top-info-list .phones .list li a {
+    font-size: 13px; }
+  header #top-info-list .email a {
+    padding-left: 10px;
+    font-size: 13px; }
+  .bottom-header {
+    top: 60px; }
+    .bottom-header .navigation .nav-bar-custom li {
+      padding-left: 30px; }
+  #third-section .list-text {
+    margin-top: 10px; }
+  #four-section .bg-img {
+    height: 378px; }
+    #four-section .bg-img img {
+      width: 100%; }
+  #whom-can-help-section .help-block {
+    margin-bottom: 70px; }
+  #delivery-section .special-block {
+    position: relative !important;
+    z-index: 2 !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: auto;
+    background-image: none !important;
+    padding: 15px !important; }
+  #delivery-section .second-row .bottom-block:before {
+    display: none; }
+  footer .nav-bar-footer li a {
+    padding-left: 32px; } }
+
+@media (max-width: 992px) {
+  footer .footer-bottom .bottom-copyright {
+    margin-top: 20px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto; }
+  .row-logo-footer {
+    margin: 0 auto;
+    width: 316px; }
+  #four-section {
+    padding: 100px 0; }
+  #top-info-list {
+    display: none; }
+  .bottom-header {
+    display: none; }
+  header .top-header .first-row.flex-container-row {
+    -webkit-box-pack: center !important;
+    -webkit-justify-content: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important; }
+  #slider {
+    height: 560px; }
+    #slider .list-service {
+      padding-top: 20px; }
+    #slider .content .title-sub {
+      font-size: 22px; }
+  #samples-section {
+    background-position: center;
+    top: 0;
+    margin-bottom: 0; }
+  #step-section .col-lg-4 .img-block:before {
+    display: none; }
+  #delivery-section {
+    height: auto; }
+    #delivery-section .first-row img, #delivery-section .first-row:after {
+      display: none !important; }
+    #delivery-section .first-row .special-block {
+      text-align: center;
+      -webkit-box-shadow: none;
+              box-shadow: none; }
+    #delivery-section .second-row .text-block {
+      margin: 0 auto; }
+      #delivery-section .second-row .text-block .link-feedback-service {
+        margin-bottom: 0px; }
+    #delivery-section .second-row .bottom-block p {
+      margin: 0;
+      text-align: center;
+      line-height: 80px; }
+  #question-section {
+    background-position: top !important;
+    padding-top: 165px;
+    padding-bottom: 40px;
+    margin-top: -165px; }
+    #question-section .form-feedback .policy p {
+      margin: 0 auto;
+      width: 368px; }
+  #map {
+    width: 100% !important; }
+  #map-section .title-section {
+    width: auto;
+    margin-left: 0;
+    margin-top: 40px; }
+  #map-section #contact-info {
+    margin: 65px 0 0 0;
+    padding-left: 0;
+    width: 499px;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media (max-width: 768px) {
+  footer .footer-bottom .link {
+    text-align: center;
+    margin: 13px auto;
+    display: block; }
+  #question-section {
+    margin-top: 0; }
+  #cert-section {
+    margin-bottom: 40px; }
+    #cert-section .title-section {
+      margin-top: 40px;
+      margin-bottom: 35px; }
+  #slider {
+    height: 370px; }
+    #slider .content {
+      margin-top: 0; }
+      #slider .content p {
+        margin-top: 0; }
+  #samples-section .custom-padding {
+    padding: 62px 0; }
+  #price-section {
+    top: 0;
+    margin-bottom: 0; }
+    #price-section .title-section {
+      margin-top: 70px; } }
+
 @media (max-width: 600px) {
-  .page-contacts .col-sm-8 {
-    padding-right: 0 !important; }
-  .page-contacts .content {
-    padding: 44px 20px !important; } }
+  #map-section #contact-info {
+    width: 100%; }
+  #cert-section .list-cert li.item .img {
+    margin: 0 auto; }
+  #whom-can-help-section .help-block {
+    margin-bottom: 10px; }
+  #whom-can-help-section .title-section {
+    margin-top: 40px;
+    margin-bottom: 30px; }
+  #five-section .form-sample-2 input[type=text] {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; }
+  #five-section .form-sample-2 input[type=submit] {
+    margin-top: 0; }
+  #step-section {
+    padding: 40px 0; }
+    #step-section .title-section {
+      font-size: 22px; }
+  #four-section {
+    padding: 40px 0; }
+  #third-section {
+    padding: 40px 0; }
+    #third-section .list-text:before {
+      display: none; }
+    #third-section .list-text {
+      padding: 0; }
+    #third-section .title-section {
+      font-size: 22px; }
+  #samples-section {
+    padding: 0 15px; }
+  #slider {
+    height: auto;
+    padding-bottom: 20px; }
+    #slider .content .title-sub {
+      text-align: center; }
+    #slider .content p {
+      margin-top: 15px;
+      text-align: center;
+      width: 100%; }
+    #slider .list-service li .title {
+      margin-top: 6px;
+      margin-bottom: 30px; }
+  header #logo-text .second,
+  header #logo-text .first {
+    font-size: 12px; }
+  header #logo-text .first {
+    padding-right: 6px; }
+  header #logo-text .second {
+    padding-left: 6px; } }

@@ -62,6 +62,7 @@ $alt_color : #14918D
   background-image: url("../images/bg-1.png")
   background-size: cover!important
   position: relative
+  background-position: center!important
   top: -108px
   z-index: 1
   .custom-padding
@@ -306,7 +307,7 @@ $alt_color : #14918D
       margin-right: auto
       color: $text_color
 
-  .col-sm-4:last-child
+  .col-lg-4:last-child
     .img-block:before
       display: none
 
@@ -369,11 +370,12 @@ $alt_color : #14918D
 // Whom we can help section
 //
 #whom-can-help-section
-  margin-bottom: 120px
+
   .title-section
     margin-top: 110px
     margin-bottom: 95px
   .help-block
+    margin-bottom: 120px
     .img-block
       height: 192px
     .text
@@ -954,13 +956,258 @@ footer
   &.tree
     color: $text_color
 
+@media  (max-width: 1400px)
+  #third-section
+    .bg-img
+      height: 385px
+      img
+        width: 100%
 
 
+@media  (max-width: 1200px)
+  header
+    #logo-img
+      img
+        height: 60px
+    #logo-text
+      .second,
+      .first
+        font-size: 13px
+    #top-info-list
+      .phones .list li
+        a
+          font-size: 13px
+      .email a
+        padding-left: 10px
+        font-size: 13px
+  .bottom-header
+    top: 60px
+    .navigation
+      .nav-bar-custom
+        li
+          padding-left: 30px
 
+  #third-section .list-text
+    margin-top: 10px
+
+  #four-section
+    .bg-img
+      height: 378px
+      img
+        width: 100%
+  #whom-can-help-section
+    .help-block
+      margin-bottom: 70px
+
+  #delivery-section
+    .special-block
+      position: relative!important
+      z-index: 2!important
+      top: 0!important
+      right: 0!important
+      width: auto
+      background-image: none!important
+      padding: 15px!important
+
+    .second-row .bottom-block:before
+      display: none
+
+  footer
+    .nav-bar-footer
+      li a
+        padding-left: 32px
+
+@media  (max-width: 992px)
+  footer
+    .footer-bottom
+      .bottom-copyright
+        margin-top: 20px
+        display: table
+        margin-left: auto
+        margin-right: auto
+
+  .row-logo-footer
+    margin: 0 auto
+    width: 316px
+
+  #four-section
+    padding: 100px 0
+
+  #top-info-list
+    display: none
+
+  .bottom-header
+    display: none
+
+  header
+    .top-header
+      .first-row.flex-container-row
+        justify-content: center!important
+
+  #slider
+    height: 560px
+    .list-service
+      padding-top: 20px
+    .content .title-sub
+      font-size: 22px
+
+  #samples-section
+    background-position: center
+    top: 0
+    margin-bottom: 0
+
+  #step-section
+    .col-lg-4
+      .img-block:before
+        display: none
+
+  #delivery-section
+    height: auto
+
+    .first-row
+      img,
+      &:after
+        display: none!important
+
+      .special-block
+        text-align: center
+        box-shadow: none
+
+    .second-row
+      .text-block
+        margin: 0 auto
+
+        .link-feedback-service
+          margin-bottom: 0px
+
+      .bottom-block p
+        margin: 0
+        text-align: center
+        line-height: 80px
+
+  #question-section
+    background-position: top !important
+    padding-top: 165px
+    padding-bottom: 40px
+    margin-top: -165px
+
+    .form-feedback .policy p
+      margin: 0 auto
+      width: 368px
+
+  #map
+    width: 100%!important
+
+  #map-section
+    .title-section
+      width: auto
+      margin-left: 0
+      margin-top: 40px
+
+    #contact-info
+      margin: 65px 0 0 0
+      padding-left: 0
+      width: 499px
+      margin-left: auto
+      margin-right: auto
+
+@media  (max-width: 768px)
+  footer .footer-bottom .link
+    text-align: center
+    margin: 13px auto
+    display: block
+  #question-section
+    margin-top: 0
+  #cert-section
+    margin-bottom: 40px
+    .title-section
+      margin-top: 40px
+      margin-bottom: 35px
+
+  #slider
+    height: 370px
+    .content
+      margin-top: 0
+      p
+        margin-top: 0
+
+  #samples-section
+    .custom-padding
+      padding: 62px 0
+  #price-section
+    top: 0
+    margin-bottom: 0
+
+    .title-section
+      margin-top: 70px
 
 @media  (max-width: 600px)
-  .page-contacts
-    .col-sm-8
-      padding-right: 0!important
+  #map-section
+    #contact-info
+      width: 100%
+  #cert-section .list-cert li.item .img
+    margin: 0 auto
+  #whom-can-help-section
+    .help-block
+      margin-bottom: 10px
+    .title-section
+      margin-top: 40px
+      margin-bottom: 30px
+
+  #five-section
+    .form-sample-2
+      input[type=text]
+        margin-left: 0
+        margin-right: 0
+        width: 100%
+      input[type=submit]
+        margin-top: 0
+
+  #step-section
+    padding: 40px 0
+    .title-section
+      font-size: 22px
+
+  #four-section
+    padding: 40px 0
+
+  #third-section
+    padding: 40px 0
+    .list-text:before
+      display: none
+    .list-text
+      padding: 0
+    .title-section
+      font-size: 22px
+  #samples-section
+    padding: 0 15px
+
+  #slider
+    height: auto
+    padding-bottom: 20px
     .content
-      padding: 44px 20px !important
+      .title-sub
+        text-align: center
+      p
+        margin-top: 15px
+        text-align: center
+        width: 100%
+
+    .list-service
+      li
+        .title
+          margin-top: 6px
+          margin-bottom: 30px
+  header
+    #logo-text
+      .second,
+      .first
+        font-size: 12px
+
+      .first
+        padding-right: 6px
+
+      .second
+        padding-left: 6px
+
+

@@ -30,7 +30,7 @@
         <div class="top-header">
             <div class="container">
                 <div class="row">
-                    <div class="first-row  flex-container-row col-sm-7 col-xs-12">
+                    <div class="first-row  flex-container-row col-lg-7 col-xs-12">
                         <a href="<?php echo home_url(); ?>" id="logo-img">
                             <img src="<?php echo get_theme_file_uri('/assets/images/logo.png') ?>" alt="Логотип">
                         </a>
@@ -84,7 +84,7 @@
     <div class="bottom-header">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 col-xs-12">
+                <div class=" col-sm-8 col-xs-12">
                     <nav class="navigation">
                         <ul class="nav-bar-custom">
                             <li class="item">

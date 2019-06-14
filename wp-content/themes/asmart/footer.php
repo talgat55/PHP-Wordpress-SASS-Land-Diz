@@ -1,7 +1,7 @@
 <footer>
     <div class="container v-100">
         <div class="row v-100 align-items-center">
-            <div class="col-sm-4 d-flex  col-xs-12">
+            <div class="row-logo-footer col-lg-4 d-flex  col-xs-12">
                 <a href="<?php echo home_url(); ?>" id="logo-footer">
                     <img src="<?php echo get_theme_file_uri('/assets/images/footer-logo.png') ?>" alt="Логотип">
                 </a>
@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8 col-xs-12">
+            <div class="col-lg-8  d-none  d-lg-block">
                 <ul class="nav-bar-footer">
                     <li class="item">
                         <a href="#">Цена</a>
@@ -38,17 +38,17 @@
         </div>
 
         <div class="row footer-bottom d-flex justify-content-between">
-            <div class="col-sm-4 col-xs-12">
+            <div class="col-lg-4 col-md-6 col-xs-12">
                 <a href="/privacy-policy" class="link">
                     Политика конфиденциальности
                 </a>
             </div>
-            <div class="col-sm-4 col-xs-12 text-center">
+            <div class="col-lg-4  col-md-6  col-xs-12 text-center">
                 <p>
                     ООО "Дизель Транс"©2019
                 </p>
             </div>
-            <div class="col-sm-4 col-xs-12 text-right">
+            <div class="col-lg-4 col-xs-12 text-right">
                 <a target="_blank" class="bottom-copyright" title="Перейти на сайт разработчика"
                    href="http://asmart-group.ru/"><?php _e('Сайт разработан IT-company <span>ASMART</span>', 'light'); ?></a>
             </div>
