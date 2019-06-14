@@ -16,19 +16,20 @@
             <div class="col-lg-8  d-none  d-lg-block">
                 <ul class="nav-bar-footer">
                     <li class="item">
-                        <a href="#">Цена</a>
+<!--                        <a href="--><?//= home_url(); ?><!--#price-section">Цена</a>-->
+                        <a href="#price-section">Цена</a>
                     </li>
                     <li class="item">
-                        <a href="#">Этапы работы </a>
+                        <a href="#step-section">Этапы работы </a>
                     </li>
                     <li class="item">
-                        <a href="#">Доставка </a>
+                        <a href="#delivery-section">Доставка </a>
                     </li>
                     <li class="item">
-                        <a href="#">Отзывы и сертификаты </a>
+                        <a href="#cert-section">Отзывы и сертификаты </a>
                     </li>
                     <li class="item">
-                        <a href="#">Контакты</a>
+                        <a href="#map-section">Контакты</a>
                     </li>
                 </ul>
 

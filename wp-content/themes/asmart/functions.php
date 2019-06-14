@@ -14,7 +14,7 @@ add_image_size('cert-img', 260, 366, false);
 function th_scripts()
 {
 
-
+    wp_enqueue_style('bootstrap.min', get_theme_file_uri('/assets/css/bootstrap.min.css'), array(), '');
 
     wp_enqueue_script('jquery', get_theme_file_uri('/assets/js/jquery-3.2.1.min.js'), array(), '', true);
     wp_enqueue_script('slick.min', get_theme_file_uri('/assets/js/slick.min.js'), array(), '', true);
@@ -41,7 +41,7 @@ function prefix_add_footer_styles()
     // Theme stylesheet.
     wp_enqueue_style('th-style', get_stylesheet_uri(), array(), '1');
 
-    wp_enqueue_style('bootstrap.min', get_theme_file_uri('/assets/css/bootstrap.min.css'), array(), '');
+
     wp_enqueue_style('normalize', get_theme_file_uri('/assets/css/normalize.css'), array(), '');
     wp_enqueue_style('lightbox.min.css', get_theme_file_uri('/assets/css/lightbox.min.css'), array(), '');
     wp_enqueue_style('slick', get_theme_file_uri('/assets/css/slick.css'), array(), '');

@@ -16,21 +16,16 @@
  */
 
 get_header(); ?>
-    <div id="primary" class="content-area  page-collection  page-main ">
+    <div id="primary" class="content-area page-main ">
 
         <div class="container">
             <div class="row flex">
-                <div class="col-sm-4 col-xs-12   ">
-                    <div class="background lazy   right"
-                         data-src="<?php echo get_theme_file_uri('/assets/images/bg-collection.jpg') ?>"></div>
-                    <h1 class="sub-title  left">
-                        <?= get_the_title(); ?>
-                    </h1>
 
-
-                </div>
-                <div class="col-sm-8 col-xs-12   ">
+                <div class="col-sm-12 col-xs-12   ">
                     <div class="content">
+                        <h1 class="main-title text-center">
+                            <?php the_title(); ?>
+                        </h1>
                         <?php
                         while (have_posts()) : the_post();
 
@@ -46,6 +41,5 @@ get_header(); ?>
             </div>
 
         </div>
-        <?php get_template_part('inc/form'); ?>
     </div>
 <?php get_footer();

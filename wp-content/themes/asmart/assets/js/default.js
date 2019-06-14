@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
     mobileMenu();
     phoneMask();
     backToTop();
-
+    scrollToDiv();
     // end redy function
 });
 
@@ -33,6 +33,23 @@ jQuery( window ).load(function() {
     map();
 });
 
+// ---------------------------------------------------------
+// Back To Top
+// ---------------------------------------------------------
+function scrollToDiv(){
+    "use strict";
+    jQuery(document).on('click',".nav-bar-custom a, .nav-bar-footer a",function(e){
+
+        console.log('rr');
+        e.preventDefault();
+
+        var position = jQuery(jQuery(this).attr("href")).offset().top;
+
+        jQuery("body, html").animate({
+            scrollTop: position
+        } /* speed */ );
+    });
+}
 // ---------------------------------------------------------
 // Back To Top
 // ---------------------------------------------------------
