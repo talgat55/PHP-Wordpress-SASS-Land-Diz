@@ -128,7 +128,8 @@ header {
   position: absolute;
   top: 98px;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 2; }
   .bottom-header .link-call {
     text-decoration: none;
     padding: 7px 0;
@@ -186,14 +187,14 @@ header {
   overflow: hidden; }
 
 #slider {
-  height: 850px;
+  height: 550px;
   background-color: #14918D;
-  background-image: url("/wp-content/themes/asmart/assets/images/home-slide.jpg");
+  background-image: url("/wp-content/themes/asmart/assets/images/home-slider-alt.jpg");
   background-size: cover !important; }
   #slider .content {
     margin-top: 87px; }
     #slider .content p {
-      margin-top: 51px;
+      margin-top: 0;
       display: inline-block;
       margin-bottom: 5px;
       color: #fff;
@@ -208,9 +209,13 @@ header {
         font-weight: 700;
         width: 100%;
         display: block; }
+  #slider .home-slider-img-overlay {
+    position: relative;
+    z-index: 0;
+    max-height: 550px; }
   #slider .list-service {
     margin: 0 -30px;
-    padding: 145px 0 0 0; }
+    padding: 15px 0 0 0; }
     #slider .list-service li {
       text-align: center;
       list-style: none;

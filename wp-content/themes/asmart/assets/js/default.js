@@ -217,11 +217,13 @@ function map() {
             myMap.geoObjects
                 // .add(myPlacemark)
                 .add(new ymaps.Placemark([54.981417, 73.388532], {
+                    balloonContent: 'ул. Почтовая, д. 33, каб. 9',
                     iconCaption: 'Наш офис'
                 }, {
                     preset: 'islands#greenDotIconWithCaption'
                 }))
                 .add(new ymaps.Placemark([54.922778, 73.239672], {
+                    balloonContent: 'пос. Магистральный, ул.Строителей, 14Б',
                     iconCaption: 'Наша база'
                 }, {
                     preset: 'islands#greenDotIconWithCaption'

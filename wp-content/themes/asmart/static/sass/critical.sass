@@ -133,6 +133,7 @@ header
   top: 98px
   left: 0
   width: 100%
+  z-index: 2
   .link-call
     text-decoration: none
     padding: 7px 0
@@ -199,15 +200,15 @@ header
 
 
 #slider
-  height: 850px
+  height: 550px
   background-color: $alt_color
-  background-image: url("/wp-content/themes/asmart/assets/images/home-slide.jpg")
+  background-image: url("/wp-content/themes/asmart/assets/images/home-slider-alt.jpg")
   background-size: cover!important
 
   .content
     margin-top: 87px
     p
-      margin-top: 51px
+      margin-top: 0
       display: inline-block
       margin-bottom: 5px
       color: #fff
@@ -223,11 +224,14 @@ header
         font-weight: 700
         width: 100%
         display: block
-
+  .home-slider-img-overlay
+    position: relative
+    z-index: 0
+    max-height: 550px
 
   .list-service
     margin: 0 -30px
-    padding: 145px 0 0 0
+    padding: 15px 0 0 0
     li
       text-align: center
       list-style: none

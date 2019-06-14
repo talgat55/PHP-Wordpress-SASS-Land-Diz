@@ -654,7 +654,7 @@ footer {
         -webkit-transition: all .3s;
         -o-transition: all .3s;
         transition: all .3s;
-        padding-left: 62px; }
+        padding-left: 60px; }
         footer .nav-bar-footer li a:hover {
           color: #9CCC51; }
       footer .nav-bar-footer li:first-child a {

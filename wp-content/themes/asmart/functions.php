@@ -13,10 +13,12 @@ add_image_size('cert-img', 260, 366, false);
  */
 function th_scripts()
 {
+    wp_deregister_script( 'jquery' );
 
     wp_enqueue_style('bootstrap.min', get_theme_file_uri('/assets/css/bootstrap.min.css'), array(), '');
 
     wp_enqueue_script('jquery', get_theme_file_uri('/assets/js/jquery-3.2.1.min.js'), array(), '', true);
+    wp_enqueue_script('jquery-migrate.min', get_theme_file_uri('/assets/js/jquery-migrate.min.js'), array(), '', true);
     wp_enqueue_script('slick.min', get_theme_file_uri('/assets/js/slick.min.js'), array(), '', true);
     wp_enqueue_script('lazy', get_theme_file_uri('/assets/js/jquery.lazy.min.js'), array(), '', true);
 

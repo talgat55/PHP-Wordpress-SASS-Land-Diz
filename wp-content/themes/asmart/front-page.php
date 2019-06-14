@@ -48,6 +48,10 @@ get_header(); ?>
                         </ul>
                     </div>
                 </div>
+                <div class="col-lg-3  d-none  d-lg-block ">
+                    <img class="home-slider-img-overlay lazy" src="<?php echo get_theme_file_uri('/assets/images/transpaernt.png') ?>"
+                         data-src="<?php echo get_theme_file_uri('/assets/images/home-slider-overlay.png') ?>" alt="Изображение">
+                </div>
             </div>
         </div>
 
@@ -102,7 +106,7 @@ get_header(); ?>
                                 <a href="#" class="first-link col-sm-6 col-xs-12" >
                                     Заказать онлайн
                                 </a>
-                                <a  target="_blank" href="http://dizeltrans.lightxdesign.ru/wp-content/uploads/2019/06/ДТ-К5-Антипинский-НПЗ.pdf" class="sescond-link col-sm-6 col-xs-12">
+                                <a  target="_blank" href="http://dizel-grupp.ru/wp-content/uploads/2019/06/ДТ-К5-Антипинский-НПЗ.pdf" class="sescond-link col-sm-6 col-xs-12">
                                     Паспорт качества
                                 </a>
                             </div>
@@ -135,7 +139,7 @@ get_header(); ?>
                                 <a href="#" class="first-link col-sm-6 col-xs-12">
                                     Заказать онлайн
                                 </a>
-                                <a  target="_blank"  href="http://dizeltrans.lightxdesign.ru/wp-content/uploads/2019/06/ДТ-К5-Газпром-2.pdf" class="sescond-link col-sm-6 col-xs-12">
+                                <a  target="_blank"  href="http://dizel-grupp.ru/wp-content/uploads/2019/06/ДТ-К5-Газпром-2.pdf" class="sescond-link col-sm-6 col-xs-12">
                                     Паспорт качества
                                 </a>
                             </div>
