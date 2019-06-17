@@ -38,17 +38,20 @@ jQuery( window ).load(function() {
 // ---------------------------------------------------------
 function scrollToDiv(){
     "use strict";
-    jQuery(document).on('click',".nav-bar-custom a, .nav-bar-footer a",function(e){
+    if(jQuery('body').hasClass('home')){
+        jQuery(document).on('click',".nav-bar-custom a, .nav-bar-footer a",function(e){
 
-        console.log('rr');
-        e.preventDefault();
+            console.log('rr');
+            e.preventDefault();
 
-        var position = jQuery(jQuery(this).attr("href")).offset().top;
+            var position = jQuery(jQuery(this).attr("href")).offset().top;
 
-        jQuery("body, html").animate({
-            scrollTop: position
-        } /* speed */ );
-    });
+            jQuery("body, html").animate({
+                scrollTop: position
+            } /* speed */ );
+        });
+    }
+
 }
 // ---------------------------------------------------------
 // Back To Top
@@ -102,7 +105,10 @@ function lasyLoad() {
     "use strict";
     var lasyClass = '.lazy';
     if (jQuery(lasyClass).length) {
-        jQuery(lasyClass).lazy();
+        jQuery(lasyClass).lazy({
+            effect: "fadeIn",
+            effectTime: 700,
+        });
     }
 
 }
@@ -281,5 +287,19 @@ document.addEventListener('wpcf7mailsent', function(event) {
 
     },3000);
 
+
+}, false);
+
+//
+//  Metrics goals
+//
+document.addEventListener('wpcf7mailsent', function(event) {
+    if (event.detail.contactFormId == "12") {
+        yaCounter54090724.reachGoal('voznikvopros');
+    } else if (event.detail.contactFormId == "13") {
+        yaCounter54090724.reachGoal('zakaztopliva1');
+    } else {
+        yaCounter54090724.reachGoal('obraztzy');
+    }
 
 }, false);

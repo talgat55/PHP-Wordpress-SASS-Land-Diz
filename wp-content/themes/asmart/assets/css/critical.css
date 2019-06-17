@@ -215,15 +215,15 @@ header {
     max-height: 550px; }
   #slider .list-service {
     margin: 0 -30px;
-    padding: 15px 0 0 0; }
+    padding: 15px 0 0 10px; }
     #slider .list-service li {
-      text-align: center;
+      text-align: left;
       list-style: none;
       display: inline-block; }
       #slider .list-service li img {
         width: auto; }
       #slider .list-service li .title {
-        margin-top: 42px;
+        margin-top: 15px;
         margin-bottom: 0;
         color: #fff;
         font-size: 16px; }

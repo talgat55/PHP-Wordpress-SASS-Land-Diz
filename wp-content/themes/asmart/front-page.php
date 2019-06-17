@@ -94,7 +94,7 @@ get_header(); ?>
                         <img src="<?php echo get_theme_file_uri('/assets/images/price-1.jpg') ?>" alt="Изображение">
                         <div class="content">
                             <div class="price">
-                                от <span>36,50*</span> руб./л
+                                от <span>37,5*</span> руб./л
                             </div>
                             <div class="description">
                                 <span>*</span>При самовывозе с базы
@@ -127,7 +127,7 @@ get_header(); ?>
                         <img src="<?php echo get_theme_file_uri('/assets/images/price-2.jpg') ?>" alt="Изображение">
                         <div class="content">
                             <div class="price">
-                                от <span>36,50*</span> руб./л
+                                от <span>43 *</span> руб./л
                             </div>
                             <div class="description">
                                 <span>*</span>При самовывозе с базы
@@ -208,7 +208,7 @@ get_header(); ?>
                 <div class="col-lg-5 d-none  d-lg-block">
                     <div class="bg-img">
                         <img class="lazy" src="<?php echo get_theme_file_uri('/assets/images/transpaernt.png') ?>"
-                             data-src="<?php echo get_theme_file_uri('/assets/images/four-img.png') ?>"
+                             data-src="<?php echo get_theme_file_uri('/assets/images/four-image-alt.png') ?>"
                              alt="Изображение">
                     </div>
 

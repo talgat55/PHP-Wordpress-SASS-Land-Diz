@@ -1,27 +1,27 @@
 @font-face {
   font-family: 'Ubuntu';
-  src: local("Ubuntu-Light"), local("Ubuntu-Light"), url("Ubuntu-Light.woff") format("woff"), url("Ubuntu-Light.ttf") format("truetype");
+  src: local("Ubuntu-Light"), local("Ubuntu-Light"), url("Ubuntu-Light-subset.woff") format("woff"), url("Ubuntu-Light-subset.ttf") format("truetype");
   font-weight: 300;
   font-display: swap;
   font-style: normal; }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: local("Ubuntu-Regular"), local("Ubuntu-Regular"), url("Ubuntu-Regular.woff") format("woff"), url("Ubuntu-Regular.ttf") format("truetype");
+  src: local("Ubuntu-Regular"), local("Ubuntu-Regular"), url("Ubuntu-Regular-subset.woff") format("woff"), url("Ubuntu-Regular-subset.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: local("Ubuntu-Medium"), local("Ubuntu-Medium"), url("Ubuntu-Medium.woff") format("woff"), url("Ubuntu-Medium.ttf") format("truetype");
+  src: local("Ubuntu-Medium"), local("Ubuntu-Medium"), url("Ubuntu-Medium-subset.woff") format("woff"), url("Ubuntu-Medium-subset.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: local("Ubuntu-Bold"), local("Ubuntu-Bold"), url("Ubuntu-Bold.woff") format("woff"), url("Ubuntu-Bold.ttf") format("truetype");
+  src: local("Ubuntu-Bold"), local("Ubuntu-Bold"), url("Ubuntu-Bold-subset.woff") format("woff"), url("Ubuntu-Bold-subset.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap; }
@@ -483,7 +483,7 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    bottom: -78px;
+    bottom: -87px;
     left: 50%;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
@@ -499,15 +499,24 @@
         border-radius: 30px;
         -webkit-transition: all .3s;
         -o-transition: all .3s;
-        transition: all .3s; }
+        transition: all .3s;
+        width: 46px;
+        height: 38px;
+        display: block; }
+        #cert-section .arrow-bottom li .prev img,
+        #cert-section .arrow-bottom li .next img {
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+                  transform: translateY(-50%); }
         #cert-section .arrow-bottom li .prev:hover,
         #cert-section .arrow-bottom li .next:hover {
           background-color: #14918D; }
       #cert-section .arrow-bottom li .next img {
-        position: relative;
-        -webkit-transform: rotateZ(180deg);
-            -ms-transform: rotate(180deg);
-                transform: rotateZ(180deg); }
+        -webkit-transform: rotateZ(180deg) translateY(50%);
+            -ms-transform: rotate(180deg) translateY(50%);
+                transform: rotateZ(180deg) translateY(50%); }
 
 #question-section {
   background: url("../images/bg-question.png");
@@ -917,7 +926,7 @@ body:not(.home) .bottom-header {
   min-height: 50vh; }
 
 div.wpcf7-mail-sent-ok {
-  display: none; }
+  display: none !important; }
 
 @media (max-width: 1400px) {
   #third-section .bg-img {
@@ -972,9 +981,19 @@ div.wpcf7-mail-sent-ok {
     width: 316px; }
   #four-section {
     padding: 100px 0; }
-  #top-info-list {
-    display: none; }
+  header #top-info-list {
+    display: block;
+    margin: 10px auto;
+    width: 100%; }
+    header #top-info-list .email {
+      display: none; }
+    header #top-info-list .phones .list li {
+      display: inline-block; }
+      header #top-info-list .phones .list li:last-child {
+        padding-left: 10px; }
   .bottom-header {
+    display: none; }
+  header .top-header .second-row::before {
     display: none; }
   header .top-header .first-row.flex-container-row {
     -webkit-box-pack: center !important;
@@ -1065,6 +1084,11 @@ div.wpcf7-mail-sent-ok {
       margin-top: 70px; } }
 
 @media (max-width: 600px) {
+  #question-section .form-feedback .policy p {
+    margin: 0 auto 15px auto;
+    width: 100%;
+    line-height: 1.5;
+    text-align: center; }
   .success-modal,
   .custom-modal {
     width: 100%; }
@@ -1108,16 +1132,20 @@ div.wpcf7-mail-sent-ok {
       margin-top: 15px;
       text-align: center;
       width: 100%; }
-    #slider .list-service li .title {
-      margin-top: 6px;
-      margin-bottom: 30px; }
+    #slider .list-service li {
+      text-align: center; }
+      #slider .list-service li .title {
+        margin-top: 6px;
+        margin-bottom: 30px; }
   header #logo-text .second,
   header #logo-text .first {
     font-size: 12px; }
   header #logo-text .first {
     padding-right: 6px; }
+    header #logo-text .first:after {
+      display: none; }
   header #logo-text .second {
-    padding-left: 6px; }
+    display: none; }
   #delivery-section .second-row .text-block {
     width: 100% !important; } }
 

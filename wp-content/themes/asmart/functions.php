@@ -13,7 +13,7 @@ add_image_size('cert-img', 260, 366, false);
  */
 function th_scripts()
 {
-    wp_deregister_script( 'jquery' );
+    wp_deregister_script('jquery');
 
     wp_enqueue_style('bootstrap.min', get_theme_file_uri('/assets/css/bootstrap.min.css'), array(), '');
 
@@ -25,7 +25,6 @@ function th_scripts()
     wp_enqueue_script('jquery.inputmask', get_theme_file_uri('/assets/js/jquery.inputmask.js'), array(), '', true);
 
     wp_enqueue_script('lightbox.min.js', get_theme_file_uri('/assets/js/lightbox.min.js'), array(), '', true);
-
 
 
     wp_enqueue_script('yandex-maps', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', array(), '1', true);
@@ -55,7 +54,6 @@ function prefix_add_footer_styles()
 
 ;
 add_action('get_footer', 'prefix_add_footer_styles');
-
 
 
 /*
@@ -104,4 +102,34 @@ if (function_exists('acf_add_options_page')) {
 
 }
 
+/**
+ * Return right url  for navigation
+ * @param $name
+ * @return string
+ */
 
+function urlsRightReturn($name)
+{
+
+    if (is_home()) {
+        $home = true;
+    } else {
+        $home = false;
+    }
+
+    $url ='';
+
+    if ($name == 'price') {
+        $url = $home ? '#price-section' : home_url() . '#price-section';
+    } else if ($name == 'step') {
+        $url = $home ? '#step-section' : home_url() . '#step-section';
+    } else if ($name == 'delivery') {
+        $url = $home ? '#delivery-section' : home_url() . '#delivery-section';
+    }else if ($name == 'cert') {
+        $url = $home ? '#cert-section' : home_url() . '#cert-section';
+    }else if ($name == 'map') {
+        $url =  $home ? '#map-section' : home_url() . '#map-section';
+    }
+
+    return $url;
+}

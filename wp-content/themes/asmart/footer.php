@@ -16,20 +16,19 @@
             <div class="col-lg-8  d-none  d-lg-block">
                 <ul class="nav-bar-footer">
                     <li class="item">
-<!--                        <a href="--><?//= home_url(); ?><!--#price-section">Цена</a>-->
-                        <a href="#price-section">Цены</a>
+                        <a href="<?= urlsRightReturn('price'); ?>">Цены</a>
                     </li>
                     <li class="item">
-                        <a href="#step-section">Этапы работы </a>
+                        <a href="<?= urlsRightReturn('step'); ?>">Этапы работы </a>
                     </li>
                     <li class="item">
-                        <a href="#delivery-section">Доставка </a>
+                        <a href="<?= urlsRightReturn('delivery'); ?>">Доставка </a>
                     </li>
                     <li class="item">
-                        <a href="#cert-section">Отзывы и сертификаты </a>
+                        <a href="<?= urlsRightReturn('cert'); ?>">Отзывы и сертификаты </a>
                     </li>
                     <li class="item">
-                        <a href="#map-section">Контакты</a>
+                        <a href="<?= urlsRightReturn('map'); ?>">Контакты</a>
                     </li>
                 </ul>
 
@@ -46,7 +45,7 @@
             </div>
             <div class="col-lg-4  col-md-6  col-xs-12 text-center">
                 <p>
-                    ООО "Дизель Транс"©2019
+                    ООО "Дизель Групп" ©2019
                 </p>
             </div>
             <div class="col-lg-4 col-xs-12 text-right">
