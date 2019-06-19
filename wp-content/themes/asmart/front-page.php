@@ -40,7 +40,7 @@ get_header(); ?>
                             <li class="col-sm-3 col-xs-12">
                                 <img src="<?php echo get_theme_file_uri('/assets/images/s-4.png') ?>" alt="иконка">
                                 <h4 class="title">
-                                    Гарантия качества топлива
+                                    100% удаление воды и 99.9% очистка от примесей
                                 </h4>
                             </li>
 
@@ -83,72 +83,73 @@ get_header(); ?>
                 </div>
             </div>
             <div class="row  ">
-                <div class="col-md-6 col-xs-12 text-center">
-                    <div class="price-block">
-                        <h4 class="title">
-                            Евро-3
-                            <span>
-                                ВПК-ОЙЛ Коченевский НПЗ
-                            </span>
-                        </h4>
-                        <img src="<?php echo get_theme_file_uri('/assets/images/price-1.jpg') ?>" alt="Изображение">
-                        <div class="content">
-                            <div class="price">
-                                от <span>37,5*</span> руб./л
-                            </div>
-                            <div class="description">
-                                <span>*</span>При самовывозе с базы
-                            </div>
+                <?php
+                $args = array(
+                    'posts_per_page' => '-1',
+                    'post_type' => 'products',
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                    'post_status' => 'publish'
 
+                );
+
+                $the_query = new WP_Query($args);
+
+                if ($the_query->have_posts()) :
+                    while ($the_query->have_posts()) :
+                        $the_query->the_post();
+                        $post_id = $the_query->post->ID;
+                        $title_org          = get_field('name_org', $post_id);
+                        $img_org            = get_field('img_org', $post_id);
+                        $price_org          = get_field('price_org', $post_id);
+                        $link_pasport_org   = get_field('link_pasport_org', $post_id);
+
+
+                        ?>
+                        <div class="col-md-6 col-xs-12 text-center">
+                            <div class="price-block">
+                                <h4 class="title">
+                                    <?= get_the_title($post_id); ?>
+                                    <span>
+                                        <?=$title_org; ?>
+                                    </span>
+                                </h4>
+
+                                <img src="<?=$img_org; ?>" alt="Изображение">
+
+                                <div class="content">
+                                    <div class="price">
+                                        от <span><?=$price_org; ?></span> руб./л
+                                    </div>
+                                    <div class="description">
+                                        <span>*</span>При самовывозе с базы
+                                    </div>
+
+                                </div>
+                                <div class="bottom">
+                                    <div class="row">
+                                        <a href="#" class="first-link col-sm-6 col-xs-12" >
+                                            Заказать онлайн
+                                        </a>
+                                        <a  target="_blank" href="<?=$link_pasport_org; ?>" class="sescond-link col-sm-6 col-xs-12">
+                                            Паспорт качества
+                                        </a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
                         </div>
-                        <div class="bottom">
-                            <div class="row">
-                                <a href="#" class="first-link col-sm-6 col-xs-12" >
-                                    Заказать онлайн
-                                </a>
-                                <a  target="_blank" href="http://dizel-grupp.ru/wp-content/uploads/2019/06/ДТ-К5-Антипинский-НПЗ.pdf" class="sescond-link col-sm-6 col-xs-12">
-                                    Паспорт качества
-                                </a>
-                            </div>
+                    <?php
+                    endwhile;
+                else:
 
-                        </div>
+                    echo "<p class='not-found-articles'>".__('Записей не найдено', 'light')."</p>";
 
+                endif;
+                ?>
 
-                    </div>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                    <div class="price-block">
-                        <h4 class="title">
-                            Евро-5
-                            <span>
-                              ГАЗПРОМНЕФТЬ НПЗ
-                            </span>
-                        </h4>
-                        <img src="<?php echo get_theme_file_uri('/assets/images/price-2.jpg') ?>" alt="Изображение">
-                        <div class="content">
-                            <div class="price">
-                                от <span>43 *</span> руб./л
-                            </div>
-                            <div class="description">
-                                <span>*</span>При самовывозе с базы
-                            </div>
-
-                        </div>
-                        <div class="bottom">
-                            <div class="row">
-                                <a href="#" class="first-link col-sm-6 col-xs-12">
-                                    Заказать онлайн
-                                </a>
-                                <a  target="_blank"  href="http://dizel-grupp.ru/wp-content/uploads/2019/06/ДТ-К5-Газпром-2.pdf" class="sescond-link col-sm-6 col-xs-12">
-                                    Паспорт качества
-                                </a>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -531,10 +532,10 @@ get_header(); ?>
                                 <img src="<?php echo get_theme_file_uri('/assets/images/geo.png') ?>" alt="иконка">
                             </div>
                             <div>
-                                <a href="https://yandex.ru/maps/66/omsk/?ll=73.388532%2C54.981417&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fll%3D73.388542%252C54.981422%26spn%3D0.001000%252C0.001000%26text%3D%25D0%25A0%25D0%25BE%25D1%2581%25D1%2581%25D0%25B8%25D1%258F%252C%2520%25D0%259E%25D0%25BC%25D1%2581%25D0%25BA%252C%2520%25D0%259F%25D0%25BE%25D1%2587%25D1%2582%25D0%25BE%25D0%25B2%25D0%25B0%25D1%258F%2520%25D1%2583%25D0%25BB%25D0%25B8%25D1%2586%25D0%25B0%252C%252033%2520&z=17">
+                                <a  target="_blank"  href="https://yandex.ru/maps/66/omsk/?ll=73.388532%2C54.981417&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fll%3D73.388542%252C54.981422%26spn%3D0.001000%252C0.001000%26text%3D%25D0%25A0%25D0%25BE%25D1%2581%25D1%2581%25D0%25B8%25D1%258F%252C%2520%25D0%259E%25D0%25BC%25D1%2581%25D0%25BA%252C%2520%25D0%259F%25D0%25BE%25D1%2587%25D1%2582%25D0%25BE%25D0%25B2%25D0%25B0%25D1%258F%2520%25D1%2583%25D0%25BB%25D0%25B8%25D1%2586%25D0%25B0%252C%252033%2520&z=17">
                                     г. Омск, <span>ул. Почтовая, д. 33, каб. 9</span> (офис)
                                 </a>
-                                <a href="https://yandex.ru/maps/?ll=73.239672%2C54.922778&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fll%3D73.239677%252C54.922779%26spn%3D0.001000%252C0.001000%26text%3D%25D0%25A0%25D0%25BE%25D1%2581%25D1%2581%25D0%25B8%25D1%258F%252C%2520%25D0%259E%25D0%25BC%25D1%2581%25D0%25BA%25D0%25B0%25D1%258F%2520%25D0%25BE%25D0%25B1%25D0%25BB%25D0%25B0%25D1%2581%25D1%2582%25D1%258C%252C%2520%25D0%259E%25D0%25BC%25D1%2581%25D0%25BA%25D0%25B8%25D0%25B9%2520%25D1%2580%25D0%25B0%25D0%25B9%25D0%25BE%25D0%25BD%252C%2520%25D0%25BF%25D0%25BE%25D1%2581%25D0%25B5%25D0%25BB%25D0%25BE%25D0%25BA%2520%25D0%259C%25D0%25B0%25D0%25B3%25D0%25B8%25D1%2581%25D1%2582%25D1%2580%25D0%25B0%25D0%25BB%25D1%258C%25D0%25BD%25D1%258B%25D0%25B9%252C%2520%25D1%2583%25D0%25BB%25D0%25B8%25D1%2586%25D0%25B0%2520%25D0%25A1%25D1%2582%25D1%2580%25D0%25BE%25D0%25B8%25D1%2582%25D0%25B5%25D0%25BB%25D0%25B5%25D0%25B9%252C%252014%25D0%2591%2520&z=17">
+                                <a  target="_blank" href="https://yandex.ru/maps/?ll=73.239672%2C54.922778&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fll%3D73.239677%252C54.922779%26spn%3D0.001000%252C0.001000%26text%3D%25D0%25A0%25D0%25BE%25D1%2581%25D1%2581%25D0%25B8%25D1%258F%252C%2520%25D0%259E%25D0%25BC%25D1%2581%25D0%25BA%25D0%25B0%25D1%258F%2520%25D0%25BE%25D0%25B1%25D0%25BB%25D0%25B0%25D1%2581%25D1%2582%25D1%258C%252C%2520%25D0%259E%25D0%25BC%25D1%2581%25D0%25BA%25D0%25B8%25D0%25B9%2520%25D1%2580%25D0%25B0%25D0%25B9%25D0%25BE%25D0%25BD%252C%2520%25D0%25BF%25D0%25BE%25D1%2581%25D0%25B5%25D0%25BB%25D0%25BE%25D0%25BA%2520%25D0%259C%25D0%25B0%25D0%25B3%25D0%25B8%25D1%2581%25D1%2582%25D1%2580%25D0%25B0%25D0%25BB%25D1%258C%25D0%25BD%25D1%258B%25D0%25B9%252C%2520%25D1%2583%25D0%25BB%25D0%25B8%25D1%2586%25D0%25B0%2520%25D0%25A1%25D1%2582%25D1%2580%25D0%25BE%25D0%25B8%25D1%2582%25D0%25B5%25D0%25BB%25D0%25B5%25D0%25B9%252C%252014%25D0%2591%2520&z=17">
                                     г. Омск, <span>пос. Магистральный, ул.Строителей, 14Б</span> (база)
                                 </a>
                             </div>
@@ -547,8 +548,9 @@ get_header(); ?>
                                 <a href="tel:89131482031">
                                     8 913 <span>14-82-031</span>
                                 </a>
-                                <a href="tel:83812482031">
-                                    8(3812) <span>48-20-31</span>
+                                <a href="tel:+73812292031">
+                                    +7(3812) <span>29-20-31</span>
+
                                 </a>
                             </div>
                         </li>

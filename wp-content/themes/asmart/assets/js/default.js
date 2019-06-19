@@ -5,17 +5,6 @@
 jQuery(document).ready(function () {
     "use strict";
 
-     //
-    //  fixed footer on bottom
-    //
-    var hh = jQuery('header').height(); // берем высоту шапки и суем в переменную hh
-    var fh = jQuery('footer').height(); // то же самое с подвалом
-    var wh = jQuery(window).height(); // высота всего окна
-    var сh = wh - hh - fh; // считаем оптимальную высоту для блока с контентом
-    jQuery('.site-content').css('min-height', сh); // применяем посчитанную высоту
-
-
-
 
     certsCarousel();
     lasyLoad();
@@ -28,50 +17,64 @@ jQuery(document).ready(function () {
 });
 
 
-
-jQuery( window ).load(function() {
+jQuery(window).load(function () {
     map();
 });
 
 // ---------------------------------------------------------
-// Back To Top
+// Scroll to section
 // ---------------------------------------------------------
-function scrollToDiv(){
+function scrollToDiv() {
     "use strict";
-    if(jQuery('body').hasClass('home')){
-        jQuery(document).on('click',".nav-bar-custom a, .nav-bar-footer a",function(e){
 
-            console.log('rr');
+    if (jQuery('body').hasClass('home')) {
+        jQuery(document).on('click', ".nav-bar-custom a, .nav-bar-footer a", function (e) {
+
             e.preventDefault();
 
             var position = jQuery(jQuery(this).attr("href")).offset().top;
 
             jQuery("body, html").animate({
                 scrollTop: position
-            } /* speed */ );
+            } /* speed */);
+
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + jQuery(this).attr('href');
+            window.history.pushState({path: newurl}, '', newurl);
+
         });
+
+
+
     }
 
 }
+
 // ---------------------------------------------------------
 // Back To Top
 // ---------------------------------------------------------
-function backToTop(){
+function backToTop() {
     "use strict";
     jQuery(window).scroll(function () {
+
+        var backToTop = jQuery('#back_to_top');
+        var activeClass = 'backactive';
+
         if (jQuery(this).scrollTop() > 100) {
-            jQuery('#back_to_top').addClass('backactive');
+            backToTop.addClass(activeClass);
         } else {
-            jQuery('#back_to_top').removeClass('backactive');
+            backToTop.removeClass(activeClass);
         }
+
     });
-    jQuery(document).on('click','#back_to_top',function(e){
+
+    jQuery(document).on('click', '#back_to_top', function (e) {
         e.preventDefault();
 
-        jQuery('body,html').animate({scrollTop: 0}, jQuery(window).scrollTop()/3, 'linear');
+        jQuery('body,html').animate({scrollTop: 0}, jQuery(window).scrollTop() / 3, 'linear');
     });
 
 }
+
 //
 //  Modal
 //
@@ -103,9 +106,11 @@ function modal() {
 
 function lasyLoad() {
     "use strict";
-    var lasyClass = '.lazy';
-    if (jQuery(lasyClass).length) {
-        jQuery(lasyClass).lazy({
+
+    var lasyClass = jQuery('.lazy');
+
+    if (lasyClass.length) {
+        lasyClass.lazy({
             effect: "fadeIn",
             effectTime: 700,
         });
@@ -119,8 +124,8 @@ function lasyLoad() {
 
 function certsCarousel() {
     "use strict";
-    var carouselClass   = jQuery('.list-cert');
-    var arrowClass      = jQuery('#cert-section .arrow-bottom');
+    var carouselClass = jQuery('.list-cert');
+    var arrowClass = jQuery('#cert-section .arrow-bottom');
 
     if (carouselClass.length) {
         carouselClass.slick({
@@ -163,7 +168,7 @@ function certsCarousel() {
 
         var widthPagination = carouselClass.find('.slick-dots').width();
 
-        arrowClass.css('width', widthPagination +  140);
+        arrowClass.css('width', widthPagination + 140);
 
 
         // custom arrow actions
@@ -180,8 +185,6 @@ function certsCarousel() {
         });
 
 
-
-
     }
 
 }
@@ -191,14 +194,15 @@ function certsCarousel() {
 // Map
 //------------------------------------
 // set width  for map in home page
-function dinamicWidthMap(){
+function dinamicWidthMap() {
     "use strict";
     var $mapHome = jQuery('#map');
 
-        $mapHome.css('width', (jQuery(window).width()   - jQuery('.container').width())  / 2  +  jQuery('#map-section .map-container').width());
+    $mapHome.css('width', (jQuery(window).width() - jQuery('.container').width()) / 2 + jQuery('#map-section .map-container').width());
 
 
 }
+
 function map() {
     "use strict";
 
@@ -209,19 +213,16 @@ function map() {
         dinamicWidthMap();
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
-                    center: [54.959971, 73.353655],
-                    zoom: 12,
-                    controls: ['zoomControl']
-                }, {
-                    // searchControlProvider: 'yandex#search'
-                });
-
-
-
+                center: [54.959971, 73.353655],
+                zoom: 12,
+                controls: ['zoomControl']
+            }, {
+                // searchControlProvider: 'yandex#search'
+            });
 
 
             myMap.geoObjects
-                // .add(myPlacemark)
+            // .add(myPlacemark)
                 .add(new ymaps.Placemark([54.981417, 73.388532], {
                     balloonContent: 'ул. Почтовая, д. 33, каб. 9',
                     iconCaption: 'Наш офис'
@@ -241,18 +242,15 @@ function map() {
 }
 
 
-
-
-
 //----------------------------------
 //  Mobile Menu
 //------------------------------------
-function mobileMenu(){
+function mobileMenu() {
     "use strict";
     var linkClass = '#mobile-toggle';
     var mobileClass = '.mobile-bar';
 
-    jQuery('body').on('click', linkClass,function(){
+    jQuery('body').on('click', linkClass, function () {
         jQuery(this).toggleClass('is-active');
         jQuery(mobileClass).toggleClass('is-active');
         return false;
@@ -262,30 +260,31 @@ function mobileMenu(){
 //----------------------------------
 //  Input phone field Mask
 //------------------------------------
-function phoneMask(){
+function phoneMask() {
     "use strict";
     let phone_class = jQuery('.phone-input');
-    if(phone_class.length){
+    if (phone_class.length) {
         phone_class.inputmask({"mask": "+7 (999) 999-9999"});
 
     }
 }
+
 //
 // Show modal after success send mail
 //
-document.addEventListener('wpcf7mailsent', function(event) {
+document.addEventListener('wpcf7mailsent', function (event) {
     var classShow = 'show';
 
     jQuery('.custom-modal').removeClass(classShow);
 
     jQuery('.success-modal, .overlay-layer').addClass(classShow);
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         jQuery('.success-modal, .overlay-layer').removeClass(classShow);
 
 
-    },3000);
+    }, 3000);
 
 
 }, false);
@@ -293,7 +292,7 @@ document.addEventListener('wpcf7mailsent', function(event) {
 //
 //  Metrics goals
 //
-document.addEventListener('wpcf7mailsent', function(event) {
+document.addEventListener('wpcf7mailsent', function (event) {
     if (event.detail.contactFormId == "12") {
         yaCounter54090724.reachGoal('voznikvopros');
     } else if (event.detail.contactFormId == "13") {

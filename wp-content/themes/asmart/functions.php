@@ -29,7 +29,6 @@ function th_scripts()
 
     wp_enqueue_script('yandex-maps', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', array(), '1', true);
 
-
     wp_enqueue_script('default', get_theme_file_uri('/assets/js/default.js'), array(), '1', true);
 
 
@@ -84,6 +83,38 @@ function post_type_certs()
     );
     register_post_type('certs', $args);
 }
+
+
+
+/*
+*  Register Post Type  Products
+*/
+
+add_action('init', 'post_type_products');
+
+function post_type_products()
+{
+    $labels = array(
+        'name' => 'Товары',
+        'singular_name' => 'Товары',
+        'all_items' => 'Товары',
+        'menu_name' => 'Товары' // ссылка в меню в админке
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'menu_position' => 5,
+        'has_archive' => true,
+        'query_var' => "products",
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        )
+    );
+    register_post_type('products', $args);
+}
+
 
 
 /*
